@@ -1,0 +1,513 @@
+/* ===================================
+   Ember & Vine — Main Stylesheet
+   Design tokens from DESIGN.md
+   =================================== */
+
+:root {
+  --bg: #0A0A0A;
+  --surface: #1A1714;
+  --text: #F5F0E8;
+  --text-muted: #8C8478;
+  --accent: #C8943E;
+  --accent-deep: #7A2E2E;
+  --border: #2A2520;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+a { color: inherit; text-decoration: none; }
+
+/* Utilities */
+.label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 28px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  transition: all 0.3s;
+}
+.btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+.btn--ghost {
+  border-color: var(--border);
+}
+.btn--ghost:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 60px;
+  height: 80px;
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+.nav.scrolled {
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+}
+.nav__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__logo {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--text);
+}
+.nav__links {
+  display: flex;
+  gap: 40px;
+}
+.nav__link {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+.nav__link:hover { color: var(--text); }
+.nav__cta {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+.nav__cta:hover { color: var(--accent); }
+.nav__burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+.nav__burger span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--text);
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+}
+.nav__burger span:nth-child(1) { top: 0; }
+.nav__burger span:nth-child(2) { top: 50%; }
+.nav__burger span:nth-child(3) { bottom: 0; }
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--bg);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu__link {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+.mobile-menu__link:hover { color: var(--text); }
+.mobile-menu__cta {
+  margin-top: 16px;
+  padding: 14px 32px;
+  border: 1px solid var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--text);
+  transition: all 0.3s;
+}
+.mobile-menu__cta:hover { background: var(--accent); color: var(--bg); }
+
+/* ===================================
+   Hero
+   =================================== */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+.hero__content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+.hero__label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: 72px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================================
+   About / Story
+   =================================== */
+.about {
+  padding: 96px 24px 96px;
+}
+.about__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+.about__image {
+  flex: 0 0 480px;
+  height: 560px;
+  overflow: hidden;
+}
+.about__image img {
+  transition: transform 0.5s;
+}
+.about__image:hover img {
+  transform: scale(1.03);
+}
+.about__content {
+  flex: 1;
+}
+.about__title {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.about__text {
+  color: var(--text);
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+/* Section divider */
+.section-divider {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ===================================
+   Menu Highlights
+   =================================== */
+.menu {
+  padding: 96px 24px;
+  text-align: center;
+}
+.menu__inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.menu .label,
+.menu .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu__title {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+.menu__items {
+  text-align: left;
+  margin-bottom: 48px;
+}
+.menu__item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.menu__item:first-child {
+  border-top: 1px solid var(--border);
+}
+.menu__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.menu__dish {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+}
+.menu__price {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-muted);
+}
+.menu__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ===================================
+   Gallery
+   =================================== */
+.gallery {
+  padding: 96px 24px;
+  text-align: center;
+}
+.gallery__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gallery .label,
+.gallery .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+.gallery__title {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+.gallery__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gallery__row {
+  display: flex;
+  gap: 4px;
+}
+.gallery__item {
+  flex: 1;
+  height: 280px;
+  overflow: hidden;
+}
+.gallery__item img {
+  transition: transform 0.5s;
+}
+.gallery__item:hover img {
+  transform: scale(1.03);
+}
+.gallery__item--wide {
+  flex: 1.14; /* 640/560 ratio from wireframe */
+}
+
+/* ===================================
+   Reservation
+   =================================== */
+.reservation {
+  padding: 96px 24px;
+  text-align: center;
+  background: var(--surface);
+}
+.reservation__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.reservation .label,
+.reservation .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+.reservation__title {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.reservation__hours {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 40px;
+  line-height: 2;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+  padding: 64px 24px 48px;
+  border-top: 1px solid var(--border);
+}
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.footer__brand {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+.footer__tagline {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.footer .label { margin-bottom: 16px; }
+.footer__text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.footer__social {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+.footer__social:hover { color: var(--text); }
+
+/* Copyright */
+.copyright {
+  padding: 18px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.copyright p {
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+@media (max-width: 768px) {
+  .nav { padding: 0 20px; }
+  .nav__links, .nav__cta { display: none; }
+  .nav__burger { display: block; }
+
+  .hero__title { font-size: 40px; }
+  .hero__label { font-size: 11px; }
+  .hero__content { padding: 0 20px; }
+
+  .about { padding: 64px 20px; }
+  .about__inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .about__image {
+    flex: none;
+    width: 100%;
+    height: 300px;
+  }
+  .about__title { font-size: 32px; }
+
+  .menu { padding: 64px 20px; }
+  .menu__title { font-size: 32px; }
+  .menu__dish { font-size: 18px; }
+
+  .gallery { padding: 64px 20px; }
+  .gallery__title { font-size: 32px; }
+  .gallery__row { flex-direction: column; }
+  .gallery__item { height: 240px; }
+
+  .reservation { padding: 64px 20px; }
+  .reservation__title { font-size: 32px; }
+
+  .footer { padding: 48px 20px; }
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title { font-size: 32px; }
+  .hero { min-height: 500px; }
+
+  .about__title { font-size: 28px; }
+
+  .footer__inner { grid-template-columns: 1fr; gap: 40px; }
+}

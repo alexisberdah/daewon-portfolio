@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/main.css"></head>
+<body >
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">EMBER &amp; VINE</a>
+    <div class="nav__links">
+      <a href="#story" class="nav__link">STORY</a>
+      <a href="#menu" class="nav__link">MENU</a>
+      <a href="#gallery" class="nav__link">GALLERY</a>
+      <a href="#events" class="nav__link">EVENTS</a>
+      <a href="#contact" class="nav__link">CONTACT</a>
+    </div>
+    <a href="#reserve" class="nav__cta">RESERVE</a>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#story" class="mobile-menu__link">STORY</a>
+  <a href="#menu" class="mobile-menu__link">MENU</a>
+  <a href="#gallery" class="mobile-menu__link">GALLERY</a>
+  <a href="#events" class="mobile-menu__link">EVENTS</a>
+  <a href="#contact" class="mobile-menu__link">CONTACT</a>
+  <a href="#reserve" class="mobile-menu__cta">RESERVE A TABLE</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" style="background-image: url('images/ember-vine/hero-hq.jpg')">
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="hero__label reveal">FIRE-COOKED CUISINE &amp; NATURAL WINE</p>
+    <h1 class="hero__title reveal">Ember &amp; Vine</h1>
+    <a href="#reserve" class="btn reveal">RESERVE A TABLE</a>
+  </div>
+</section>
+
+<!-- About / Story -->
+<section class="about" id="story">
+  <div class="about__inner">
+    <div class="about__image reveal">
+      <img src="images/ember-vine/about-chef-hq.jpg" alt="Chef working over open flame" loading="lazy">
+    </div>
+    <div class="about__content">
+      <p class="label reveal">OUR STORY</p>
+      <div class="divider reveal"></div>
+      <h2 class="about__title reveal">Where Fire Meets Vine</h2>
+      <p class="about__text reveal">Born from a passion for elemental cooking and honest winemaking, Ember &amp; Vine is a place where ingredients speak for themselves. Every dish is kissed by open flame — wood-fired, charcoal-grilled, or slow-smoked — and paired with wines from small, independent producers who farm with the same respect for nature.</p>
+      <p class="about__text reveal">Our menu changes with the seasons, driven by what the land offers and what the fire demands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="section-divider"></div>
+
+<!-- Menu Highlights -->
+<section class="menu" id="menu">
+  <div class="menu__inner">
+    <p class="label reveal">THE MENU</p>
+    <div class="divider reveal"></div>
+    <h2 class="menu__title reveal">A Selection from the Hearth</h2>
+    <div class="menu__items">
+      <div class="menu__item reveal">
+        <div class="menu__item-header">
+          <span class="menu__dish">Wood-Roasted Bone Marrow</span>
+          <span class="menu__price">&pound;24</span>
+        </div>
+        <p class="menu__desc">Sourdough, herb salsa verde, smoked salt</p>
+      </div>
+      <div class="menu__item reveal">
+        <div class="menu__item-header">
+          <span class="menu__dish">Charcoal-Grilled Octopus</span>
+          <span class="menu__price">&pound;28</span>
+        </div>
+        <p class="menu__desc">Nduja butter, crispy potatoes, lemon</p>
+      </div>
+      <div class="menu__item reveal">
+        <div class="menu__item-header">
+          <span class="menu__dish">Dry-Aged Ribeye over Cherry Wood</span>
+          <span class="menu__price">&pound;52</span>
+        </div>
+        <p class="menu__desc">B&eacute;arnaise, grilled shallots, bone jus</p>
+      </div>
+      <div class="menu__item reveal">
+        <div class="menu__item-header">
+          <span class="menu__dish">Whole Grilled Branzino</span>
+          <span class="menu__price">&pound;38</span>
+        </div>
+        <p class="menu__desc">Fennel, olive tapenade, preserved lemon</p>
+      </div>
+      <div class="menu__item reveal">
+        <div class="menu__item-header">
+          <span class="menu__dish">Smoked Chocolate Fondant</span>
+          <span class="menu__price">&pound;16</span>
+        </div>
+        <p class="menu__desc">Mesquite cream, salted caramel, honeycomb</p>
+      </div>
+    </div>
+    <a href="#" class="btn btn--ghost reveal">VIEW FULL MENU</a>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <div class="gallery__inner">
+    <p class="label reveal">GALLERY</p>
+    <div class="divider reveal"></div>
+    <h2 class="gallery__title reveal">Moments at the Table</h2>
+    <div class="gallery__grid reveal">
+      <div class="gallery__row gallery__row--top">
+        <div class="gallery__item gallery__item--wide">
+          <img src="images/ember-vine/gallery-1-kitchen-hq.jpg" alt="Open hearth kitchen">
+        </div>
+        <div class="gallery__item">
+          <img src="images/ember-vine/gallery-2-ambiance-hq.jpg" alt="Evening ambiance">
+        </div>
+      </div>
+      <div class="gallery__row gallery__row--bottom">
+        <div class="gallery__item">
+          <img src="images/ember-vine/gallery-3-food-hq.jpg" alt="Charcoal-grilled octopus">
+        </div>
+        <div class="gallery__item">
+          <img src="images/ember-vine/gallery-4-wine-hq.jpg" alt="Wine cellar">
+        </div>
+        <div class="gallery__item">
+          <img src="images/ember-vine/gallery-5-table-hq.jpg" alt="Candlelit table">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reservation -->
+<section class="reservation" id="reserve">
+  <div class="reservation__inner">
+    <p class="label reveal">RESERVATIONS</p>
+    <div class="divider reveal"></div>
+    <h2 class="reservation__title reveal">Join Us for an Evening by the Fire</h2>
+    <p class="reservation__hours reveal">Tuesday — Saturday, 6:00 PM — 11:00 PM<br>Sunday Brunch, 11:00 AM — 3:00 PM</p>
+    <a href="#" class="btn reveal">RESERVE A TABLE</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="footer__inner">
+    <div class="footer__col">
+      <p class="footer__brand">Ember &amp; Vine</p>
+      <p class="footer__tagline">Fire-cooked cuisine &amp; natural wine</p>
+    </div>
+    <div class="footer__col">
+      <p class="label">VISIT US</p>
+      <p class="footer__text">42 Kingsley Street<br>London, W1B 5QJ<br>+44 20 7946 0321<br>hello@emberandvine.com</p>
+    </div>
+    <div class="footer__col">
+      <p class="label">HOURS</p>
+      <p class="footer__text">Tuesday — Thursday<br>6:00 PM — 10:30 PM<br><br>Friday — Saturday<br>6:00 PM — 11:00 PM<br><br>Sunday Brunch<br>11:00 AM — 3:00 PM</p>
+    </div>
+    <div class="footer__col">
+      <p class="label">FOLLOW</p>
+      <a href="#" class="footer__social">Instagram</a>
+      <a href="#" class="footer__social">Facebook</a>
+      <a href="#" class="footer__social">TripAdvisor</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Copyright -->
+<div class="copyright">
+  <p>&copy; 2026 Ember &amp; Vine. All rights reserved.</p>
+</div>
+
+
+<script src="js/main.js"></script></body>
+</html>
